@@ -13,7 +13,7 @@
 [![Total Downloads][badge-downloads]][downloads]
 
 > TS utility for converting an input from any base to another base
-the min base this library accepts is 2.
+> the min base this library accepts is 2.
 
 :us: The documentation of this project is in spanish as this is the natural language for intended audience.
 
@@ -83,25 +83,23 @@ The `@nodecfdi/base-converter` library is copyright © [NodeCfdi](https://github
 
 [contributing]: https://github.com/nodecfdi/base-converter/blob/main/CONTRIBUTING.md
 [changelog]: https://github.com/nodecfdi/base-converter/blob/main/CHANGELOG.md
-
 [source]: https://github.com/nodecfdi/base-converter
 [node-version]: https://www.npmjs.com/package/@nodecfdi/base-converter
 [discord]: https://discord.gg/AsqX8fkW2k
 [release]: https://www.npmjs.com/package/@nodecfdi/base-converter
 [license]: https://github.com/nodecfdi/base-converter/blob/main/LICENSE
 [build]: https://github.com/nodecfdi/base-converter/actions/workflows/build.yml?query=branch:main
-[reliability]:https://sonarcloud.io/component_measures?id=nodecfdi_base-converter&metric=Reliability
+[reliability]: https://sonarcloud.io/component_measures?id=nodecfdi_base-converter&metric=Reliability
 [maintainability]: https://sonarcloud.io/component_measures?id=nodecfdi_base-converter&metric=Maintainability
 [coverage]: https://sonarcloud.io/component_measures?id=nodecfdi_base-converter&metric=Coverage
 [violations]: https://sonarcloud.io/project/issues?id=nodecfdi_base-converter&resolved=false
 [downloads]: https://www.npmjs.com/package/@nodecfdi/base-converter
-
 [badge-source]: https://img.shields.io/badge/source-nodecfdi/base--converter-blue.svg?logo=github
 [badge-node-version]: https://img.shields.io/node/v/@nodecfdi/base-converter.svg?logo=nodedotjs
 [badge-discord]: https://img.shields.io/discord/459860554090283019?logo=discord
 [badge-release]: https://img.shields.io/npm/v/@nodecfdi/base-converter.svg?logo=npm
 [badge-license]: https://img.shields.io/github/license/nodecfdi/base-converter.svg?logo=open-source-initiative
-[badge-build]: https://img.shields.io/github/workflow/status/nodecfdi/base-converter/build/main?logo=github-actions
+[badge-build]: https://img.shields.io/github/actions/workflow/status/nodecfdi/base-converter/build.yml?branch=main
 [badge-reliability]: https://sonarcloud.io/api/project_badges/measure?project=nodecfdi_base-converter&metric=reliability_rating
 [badge-maintainability]: https://sonarcloud.io/api/project_badges/measure?project=nodecfdi_base-converter&metric=sqale_rating
 [badge-coverage]: https://img.shields.io/sonar/coverage/nodecfdi_base-converter/main?logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io

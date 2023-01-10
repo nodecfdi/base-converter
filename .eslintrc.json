@@ -1,0 +1,34 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint", "eslint-plugin-tsdoc"],
+    "extends": ["eslint:recommended", "xo", "xo-typescript", "plugin:unicorn/recommended", "prettier"],
+    "parserOptions": {
+        "project": ["./tsconfig.json", "./tests/tsconfig.json"]
+    },
+    "rules": {
+        // Eslint suite rules
+        "semi": "error",
+        "quotes": [
+            "error",
+            "single",
+            {
+                "allowTemplateLiterals": true,
+                "avoidEscape": true
+            }
+        ],
+
+        // Typescript rules
+
+        // Unicorn rules
+        "unicorn/consistent-function-scoping": [
+            "error",
+            {
+                "checkArrowFunctions": false
+            }
+        ],
+
+        // TSDOC rules
+        "tsdoc/syntax": "warn"
+    }
+}

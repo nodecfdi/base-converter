@@ -3,16 +3,18 @@ import { BaseConverterSequence } from './base-converter-sequence';
 /**
  * Converts any string of any base to any other base without
  * JS native parseInt or parseFloat limitations.
+ *
+ * @public
  */
 class BaseConverter {
+    public static createBase36(): BaseConverter {
+        return new BaseConverter(new BaseConverterSequence('0123456789abcdefghijklmnopqrstuvwxyz'));
+    }
+
     private readonly _sequence: BaseConverterSequence;
 
     constructor(sequence: BaseConverterSequence) {
         this._sequence = sequence;
-    }
-
-    public static createBase36(): BaseConverter {
-        return new BaseConverter(new BaseConverterSequence('0123456789abcdefghijklmnopqrstuvwxyz'));
     }
 
     public sequence(): BaseConverterSequence {
@@ -31,23 +33,25 @@ class BaseConverter {
         if (frombase < 2 || frombase > this.maximumBase()) {
             throw new Error('Invalid from base');
         }
+
         if (tobase < 2 || tobase > this.maximumBase()) {
             throw new Error('Invalid to base');
         }
 
         const originalSequence = this.sequence().value();
-        if ('' === input) {
-            input = originalSequence[0]; // use zero has input
+        if (input === '') {
+            input = originalSequence[0]; // Use zero has input
         }
-        const chars = originalSequence.substring(0, frombase);
+
+        const chars = originalSequence.slice(0, Math.max(0, frombase));
         if (!new RegExp(`^[${chars}]+$`).test(input)) {
             throw new Error('The number to convert contains invalid characters');
         }
 
-        let length = input.length;
+        let { length } = input;
         const values: number[] = [];
-        for (let i = 0; i < length; i++) {
-            values.push(originalSequence.indexOf(input.charAt(i)));
+        for (let index = 0; index < length; index++) {
+            values.push(originalSequence.indexOf(input.charAt(index)));
         }
 
         let result = '';
@@ -55,17 +59,18 @@ class BaseConverter {
         do {
             let divide = 0;
             newlen = 0;
-            for (let i = 0; i < length; i++) {
-                divide = divide * frombase + values[i];
+            for (let index = 0; index < length; index++) {
+                divide = divide * frombase + values[index];
                 if (divide >= tobase) {
                     values[newlen] = Math.floor(divide / tobase);
-                    divide = divide % tobase;
-                    newlen = newlen + 1;
+                    divide %= tobase;
+                    newlen += 1;
                 } else if (newlen > 0) {
                     values[newlen] = 0;
-                    newlen = newlen + 1;
+                    newlen += 1;
                 }
             }
+
             length = newlen;
             result = `${originalSequence[divide]}${result}`;
         } while (newlen > 0);
