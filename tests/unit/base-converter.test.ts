@@ -7,7 +7,7 @@ describe('BaseConverter', () => {
         expect(converter.sequence()).toBe(hexSequence);
         expect(converter.maximumBase()).toBe(16);
         const input = 'ffff';
-        const expected = parseInt(input, 16).toString(2);
+        const expected = Number.parseInt(input, 16).toString(2);
         expect(converter.convert(input, 16, 2)).toBe(expected);
     });
 
@@ -47,7 +47,7 @@ describe('BaseConverter', () => {
     });
 
     test('convert using long input', () => {
-        // this is the main reason to exists of BaseConverter class
+        // This is the main reason to exists of BaseConverter class
         // since parseInt uses scientific notation if the number is >= 1e21 and has a maximum precision of 20.
         const input = '3330303031303030303030333030303233373038';
         const expected = '292233162870206001759766198425879490508935868472';
@@ -72,7 +72,7 @@ describe('BaseConverter', () => {
     });
 
     test('convert zero using letters sequence', () => {
-        // parseInt('501020304050607', 8).toString(16) => 141083105187
+        // Number.parseInt('501020304050607', 8).toString(16) => 141083105187
         //        501020304050607
         const input = 'FABACADAEAFAGAH';
         //           141083105187

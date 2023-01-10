@@ -21,6 +21,12 @@
         // Typescript rules
 
         // Unicorn rules
+        "unicorn/consistent-function-scoping": [
+            "error",
+            {
+                "checkArrowFunctions": false
+            }
+        ],
 
         // TSDOC rules
         "tsdoc/syntax": "warn"
