@@ -25,14 +25,30 @@ Librería que convierte un numero entre bases arbitrarias
 
 ## Instalación
 
-```shell
+NPM
+
+```bash
 npm i @nodecfdi/base-converter --save
 ```
 
-or
+YARN
 
 ```shell
 yarn add @nodecfdi/base-converter
+```
+
+PNPM
+
+```shell
+pnpm add @nodecfdi/base-converter
+```
+
+CDN - Browser
+
+Usa la versión mas reciente publicada cambiando `<latest-version>` por la última version. Ex. ...base-converter@0.1.2/dist...
+
+```html
+<script src="https://unpkg.com/@nodecfdi/base-converter@<latest-version>/dist/base-converter.global.js"></script>
 ```
 
 ## Implementation
