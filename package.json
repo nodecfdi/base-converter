@@ -20,11 +20,9 @@
     "types": "dist/index.d.ts",
     "exports": {
         ".": {
-            "browser": {
-                "default": "./dist/base-converter.global.js"
-            },
             "import": "./dist/base-converter.js",
-            "require": "./dist/base-converter.cjs"
+            "require": "./dist/base-converter.cjs",
+            "default": "./dist/base-converter.js"
         }
     },
     "files": [
@@ -52,15 +50,15 @@
     "homepage": "https://github.com/nodecfdi/base-converter",
     "devDependencies": {
         "@changesets/cli": "^2.26.0",
-        "@commitlint/cli": "^17.4.1",
-        "@microsoft/api-extractor": "^7.33.7",
+        "@commitlint/cli": "^17.4.4",
+        "@microsoft/api-extractor": "^7.34.4",
         "@nrsk/config-conventional": "^1.0.0",
         "@types/is-ci": "^3.0.0",
-        "@types/node": "^18.11.18",
-        "@typescript-eslint/eslint-plugin": "^5.48.1",
-        "@typescript-eslint/parser": "^5.48.1",
-        "@vitest/coverage-istanbul": "^0.28.0",
-        "eslint": "^8.31.0",
+        "@types/node": "^18.14.1",
+        "@typescript-eslint/eslint-plugin": "^5.53.0",
+        "@typescript-eslint/parser": "^5.53.0",
+        "@vitest/coverage-istanbul": "^0.28.5",
+        "eslint": "^8.34.0",
         "eslint-config-prettier": "^8.6.0",
         "eslint-config-xo": "^0.43.1",
         "eslint-config-xo-typescript": "^0.56.0",
@@ -68,16 +66,16 @@
         "eslint-plugin-unicorn": "^45.0.2",
         "husky": "^8.0.3",
         "is-ci": "^3.0.1",
-        "lint-staged": "^13.1.0",
-        "prettier": "^2.8.2",
-        "rimraf": "^4.0.0",
-        "tsup": "^6.5.0",
-        "tsx": "^3.12.2",
-        "typedoc": "^0.23.24",
+        "lint-staged": "^13.1.2",
+        "prettier": "^2.8.4",
+        "rimraf": "^4.1.2",
+        "tsup": "^6.6.3",
+        "tsx": "^3.12.3",
+        "typedoc": "^0.23.25",
         "typedoc-theme-hierarchy": "^3.0.2",
-        "typescript": "^4.9.4",
-        "vite": "^4.0.4",
-        "vitest": "^0.28.0"
+        "typescript": "^4.9.5",
+        "vite": "^4.1.4",
+        "vitest": "^0.28.5"
     },
     "commitlint": {
         "extends": [
