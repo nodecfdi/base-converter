@@ -3,8 +3,6 @@ import { BaseConverterSequence } from './base-converter-sequence';
 /**
  * Converts any string of any base to any other base without
  * JS native parseInt or parseFloat limitations.
- *
- * @public
  */
 class BaseConverter {
     public static createBase36(): BaseConverter {

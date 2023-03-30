@@ -1,5 +1,13 @@
 # @nodecfdi/base-converter
 
+## 0.1.3
+
+### Patch Changes - Update dependencies and maintenance in general
+
+- Fixed CI error
+- Minor fixes on generate exports with types (typescript)
+- Update dependencies
+
 ## 0.1.2
 
 ### Patch Changes - Change export for build process using bundlers

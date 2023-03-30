@@ -1,7 +1,5 @@
 /**
  * This is a value object for BaseConverter containing the sequence
- *
- * @public
  */
 class BaseConverterSequence {
     public static isValid(value: string): boolean {
