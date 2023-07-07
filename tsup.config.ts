@@ -4,33 +4,33 @@ import { defineConfig, type Options } from 'tsup';
 const entry = 'src/index.ts';
 
 const sharedConfig = defineConfig({
+    name: 'base-converter',
     globalName: 'baseConverter',
     splitting: false,
     sourcemap: true,
     format: ['esm', 'cjs', 'iife'],
-    treeshake: true,
     minify: isCI,
-    bundle: true,
-    shims: true
+    shims: true,
 });
 
 const mainConfig = defineConfig({
     ...sharedConfig,
     entry: {
-        'base-converter': entry
+        'base-converter': entry,
     },
-    dts: false
+    dts: false,
 }) as Options;
 
 const dtsConfig = defineConfig({
     ...sharedConfig,
     entry: {
-        'base-converter': entry
+        'base-converter': entry,
     },
     dts: {
         entry,
-        only: true
-    }
+        only: true,
+        resolve: true,
+    },
 }) as Options;
 
 export default defineConfig([mainConfig, dtsConfig]);

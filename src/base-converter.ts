@@ -4,15 +4,17 @@ import { BaseConverterSequence } from './base-converter-sequence';
  * Converts any string of any base to any other base without
  * JS native parseInt or parseFloat limitations.
  */
-class BaseConverter {
-    public static createBase36(): BaseConverter {
-        return new BaseConverter(new BaseConverterSequence('0123456789abcdefghijklmnopqrstuvwxyz'));
-    }
-
+export class BaseConverter {
     private readonly _sequence: BaseConverterSequence;
 
     constructor(sequence: BaseConverterSequence) {
         this._sequence = sequence;
+    }
+
+    public static createBase36(): BaseConverter {
+        return new BaseConverter(
+            new BaseConverterSequence('0123456789abcdefghijklmnopqrstuvwxyz')
+        );
     }
 
     public sequence(): BaseConverterSequence {
@@ -43,7 +45,9 @@ class BaseConverter {
 
         const chars = originalSequence.slice(0, Math.max(0, frombase));
         if (!new RegExp(`^[${chars}]+$`).test(input)) {
-            throw new Error('The number to convert contains invalid characters');
+            throw new Error(
+                'The number to convert contains invalid characters'
+            );
         }
 
         let { length } = input;
@@ -76,5 +80,3 @@ class BaseConverter {
         return result;
     }
 }
-
-export { BaseConverter };

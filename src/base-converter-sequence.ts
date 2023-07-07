@@ -1,7 +1,16 @@
 /**
  * This is a value object for BaseConverter containing the sequence
  */
-class BaseConverterSequence {
+export class BaseConverterSequence {
+    private readonly _sequence: string;
+    private readonly _length: number;
+
+    constructor(sequence: string) {
+        BaseConverterSequence.checkIsValid(sequence);
+        this._sequence = sequence.toUpperCase();
+        this._length = new TextEncoder().encode(sequence).byteLength;
+    }
+
     public static isValid(value: string): boolean {
         try {
             BaseConverterSequence.checkIsValid(value);
@@ -23,19 +32,12 @@ class BaseConverterSequence {
             throw new Error('Cannot use multibyte strings in dictionary');
         }
 
-        const repeated = [...sequence.toUpperCase()].some((v, index, a) => a.lastIndexOf(v) !== index);
+        const repeated = [...sequence.toUpperCase()].some(
+            (v, index, a) => a.lastIndexOf(v) !== index
+        );
         if (repeated) {
             throw new Error('The sequence has not unique values');
         }
-    }
-
-    private readonly _sequence: string;
-    private readonly _length: number;
-
-    constructor(sequence: string) {
-        BaseConverterSequence.checkIsValid(sequence);
-        this._sequence = sequence.toUpperCase();
-        this._length = new TextEncoder().encode(sequence).byteLength;
     }
 
     public toString = (): string => this._sequence;
@@ -48,5 +50,3 @@ class BaseConverterSequence {
         return this._length;
     }
 }
-
-export { BaseConverterSequence };
