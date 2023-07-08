@@ -45,7 +45,7 @@ pnpm add @nodecfdi/base-converter
 
 CDN - Browser
 
-Usa la versión mas reciente publicada cambiando `<latest-version>` por la última version. Ex. ...base-converter@0.1.2/dist...
+Usa la versión mas reciente publicada cambiando `<latest-version>` por la última version. Ex. ...base-converter@1.0.0/dist...
 
 ```html
 <script src="https://unpkg.com/@nodecfdi/base-converter@<latest-version>/dist/base-converter.global.js"></script>
@@ -56,7 +56,7 @@ Usa la versión mas reciente publicada cambiando `<latest-version>` por la últi
 El convertidor espera tres parámetros: `converter.convert(input, fromBase, toBase)`
 
 ```ts
-import { BaseConverter } from '@nodecfdi/utils-internal-baseconverter';
+import { BaseConverter } from '@nodecfdi/base-converter';
 // this is the main reason to exists of BaseConverter class
 // since parseInt and toString cannot handle large inputs
 const input = '3330303031303030303030333030303233373038';
@@ -68,7 +68,7 @@ const result = converter.convert(input, 16, 10);
 Alternativamente se puede definir cualquier sequencia y no es sensitivo a mayusculas o minusculas:
 
 ```ts
-import { BaseConverter, BaseConverterSequence } from '@nodecfdi/utils-internal-baseconverter';
+import { BaseConverter, BaseConverterSequence } from '@nodecfdi/base-converter';
 const hexSequence = new BaseConverterSequence('0123456789abCDEF');
 const converter = new BaseConverter(hexSequence);
 const input = 'FFff';

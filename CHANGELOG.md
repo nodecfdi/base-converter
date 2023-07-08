@@ -1,5 +1,15 @@
 # @nodecfdi/base-converter
 
+## 1.0.0 - Stable Release
+
+- First stable version
+- Update config for tsup lib
+- Update types exports for typescript module and commonjs
+- Update to ESM
+- Update dependencies
+- Update CI workflow for fix pipeline to latest github changes
+- Drop support to node versions < 16
+
 ## 0.1.3
 
 ### Patch Changes - Update dependencies and maintenance in general

@@ -1,7 +1,7 @@
-import { BaseConverterSequence } from '~/base-converter-sequence';
+import { BaseConverterSequence } from 'src/base-converter-sequence';
 
 describe('BaseConverterSequence', () => {
-    test('valid sequence', () => {
+    test('valid_sequence', () => {
         const source = 'ABCD';
         const sequence = new BaseConverterSequence(source);
 
@@ -10,42 +10,44 @@ describe('BaseConverterSequence', () => {
         expect(sequence.toString()).toBe(source);
     });
 
-    test('invalid sequence with empty string', () => {
+    test('invalid_sequence_with_empty_string', () => {
         const t = (): BaseConverterSequence => new BaseConverterSequence('');
 
         expect(t).toThrow(Error);
         expect(t).toThrow('Sequence does not contains enough elements');
     });
 
-    test('invalid sequence with one char', () => {
+    test('invalid_sequence_with_one_char', () => {
         const t = (): BaseConverterSequence => new BaseConverterSequence('X');
 
         expect(t).toThrow(Error);
         expect(t).toThrow('Sequence does not contains enough elements');
     });
 
-    test('invalid sequence with multibyte', () => {
+    test('invalid_sequence_with_multibyte', () => {
         const t = (): BaseConverterSequence => new BaseConverterSequence('Ñ');
 
         expect(t).toThrow(Error);
         expect(t).toThrow('multibyte');
     });
 
-    test('invalid sequence repeated chars', () => {
-        const t = (): BaseConverterSequence => new BaseConverterSequence('ABCBA');
+    test('invalid_sequence_repeated_chars', () => {
+        const t = (): BaseConverterSequence =>
+            new BaseConverterSequence('ABCBA');
 
         expect(t).toThrow(Error);
         expect(t).toThrow('The sequence has not unique values');
     });
 
-    test('invalid sequence with repeated chars different case', () => {
-        const t = (): BaseConverterSequence => new BaseConverterSequence('ABCDabcd');
+    test('invalid_sequence_with_repeated_chars_different_case', () => {
+        const t = (): BaseConverterSequence =>
+            new BaseConverterSequence('ABCDabcd');
 
         expect(t).toThrow(Error);
         expect(t).toThrow('The sequence has not unique values');
     });
 
-    test('is valid method', () => {
+    test('is_valid_method', () => {
         expect(BaseConverterSequence.isValid('abc')).toBeTruthy();
         expect(BaseConverterSequence.isValid('abcb')).toBeFalsy();
         expect(BaseConverterSequence.isValid('')).toBeFalsy();
