@@ -62,7 +62,8 @@ export class BaseConverter {
             let divide = 0;
             newlen = 0;
             for (let index = 0; index < length; index++) {
-                divide = divide * frombase + values[index];
+                divide *= frombase;
+                divide += values[index];
                 if (divide >= tobase) {
                     values[newlen] = Math.floor(divide / tobase);
                     divide %= tobase;
