@@ -79,9 +79,7 @@ describe('BaseConverter', () => {
         //           141083105187
         const expected = 'BEBAIDBAFBIH';
 
-        const converter = new BaseConverter(
-            new BaseConverterSequence('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
-        );
+        const converter = new BaseConverter(new BaseConverterSequence('ABCDEFGHIJKLMNOPQRSTUVWXYZ'));
         expect(converter.convert(input, 8, 16)).toBe(expected);
     });
 });

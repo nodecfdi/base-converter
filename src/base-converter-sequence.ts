@@ -3,6 +3,7 @@
  */
 export class BaseConverterSequence {
     private readonly _sequence: string;
+
     private readonly _length: number;
 
     constructor(sequence: string) {
@@ -32,9 +33,7 @@ export class BaseConverterSequence {
             throw new Error('Cannot use multibyte strings in dictionary');
         }
 
-        const repeated = [...sequence.toUpperCase()].some(
-            (v, index, a) => a.lastIndexOf(v) !== index
-        );
+        const repeated = [...sequence.toUpperCase()].some((v, index, a) => a.lastIndexOf(v) !== index);
         if (repeated) {
             throw new Error('The sequence has not unique values');
         }

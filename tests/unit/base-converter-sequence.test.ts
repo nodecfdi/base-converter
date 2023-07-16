@@ -32,16 +32,14 @@ describe('BaseConverterSequence', () => {
     });
 
     test('invalid_sequence_repeated_chars', () => {
-        const t = (): BaseConverterSequence =>
-            new BaseConverterSequence('ABCBA');
+        const t = (): BaseConverterSequence => new BaseConverterSequence('ABCBA');
 
         expect(t).toThrow(Error);
         expect(t).toThrow('The sequence has not unique values');
     });
 
     test('invalid_sequence_with_repeated_chars_different_case', () => {
-        const t = (): BaseConverterSequence =>
-            new BaseConverterSequence('ABCDabcd');
+        const t = (): BaseConverterSequence => new BaseConverterSequence('ABCDabcd');
 
         expect(t).toThrow(Error);
         expect(t).toThrow('The sequence has not unique values');
