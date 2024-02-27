@@ -11,6 +11,9 @@ devDependencies:
   '@commitlint/cli':
     specifier: ^19.0.1
     version: 19.0.1(@types/node@20.11.20)(typescript@5.3.3)
+  '@commitlint/config-conventional':
+    specifier: ^19.0.0
+    version: 19.0.0
   '@types/node':
     specifier: ^20.11.20
     version: 20.11.20
@@ -23,6 +26,9 @@ devDependencies:
   husky:
     specifier: ^9.0.11
     version: 9.0.11
+  is-in-ci:
+    specifier: ^0.1.0
+    version: 0.1.0
   jsdom:
     specifier: ^24.0.0
     version: 24.0.0
@@ -456,6 +462,14 @@ packages:
     transitivePeerDependencies:
       - '@types/node'
       - typescript
+    dev: true
+
+  /@commitlint/config-conventional@19.0.0:
+    resolution: {integrity: sha512-d8lPm+slPUdA8Zof2Y36RqAm/MmAYx/QQIEd2gKbpfLThQK1oYLs+0C3sMPD+4LIq2kh4cnbV9WnPA0P5sN8Ig==}
+    engines: {node: '>=v18'}
+    dependencies:
+      '@commitlint/types': 19.0.0
+      conventional-changelog-conventionalcommits: 7.0.2
     dev: true
 
   /@commitlint/config-validator@19.0.0:
@@ -1528,6 +1542,13 @@ packages:
       compare-func: 2.0.0
     dev: true
 
+  /conventional-changelog-conventionalcommits@7.0.2:
+    resolution: {integrity: sha512-NKXYmMR/Hr1DevQegFB4MwfM5Vv0m4UIxKZTTYuD98lpTknaZlSRrDOG4X7wIXpGkfsYxZTghUN+Qq+T0YQI7w==}
+    engines: {node: '>=16'}
+    dependencies:
+      compare-func: 2.0.0
+    dev: true
+
   /conventional-commits-parser@5.0.0:
     resolution: {integrity: sha512-ZPMl0ZJbw74iS9LuX9YIAiW8pfM5p3yh2o/NbXHbkFuZzY5jvdi5jFycEOkmBW5H5I7nA+D6f3UcsCLP2vvSEA==}
     engines: {node: '>=16'}
@@ -2554,6 +2575,12 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       is-extglob: 2.1.1
+    dev: true
+
+  /is-in-ci@0.1.0:
+    resolution: {integrity: sha512-d9PXLEY0v1iJ64xLiQMJ51J128EYHAaOR4yZqQi8aHGfw6KgifM3/Viw1oZZ1GCVmb3gBuyhLyHj0HgR2DhSXQ==}
+    engines: {node: '>=18'}
+    hasBin: true
     dev: true
 
   /is-negative-zero@2.0.3:
