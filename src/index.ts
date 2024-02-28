@@ -1,2 +1,2 @@
-export * from './base-converter-sequence';
-export * from './base-converter';
+export * from './base_converter';
+export * from './base_converter_sequence';

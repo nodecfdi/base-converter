@@ -1,5 +1,18 @@
 # @nodecfdi/base-converter
 
+## 1.0.1
+
+### Patch Changes - Change build tool, linter tools
+
+- Update dependencies
+- Update docs with new theme
+- Replace tsup to vite in library mode
+- Update types exports for typescript
+- Update CI with latest github actions
+- Force to more strict rules on eslint and prettier
+- Update commitlint cli and config
+- Change license to 2024
+
 ## 1.0.0 - Stable Release
 
 - First stable version
