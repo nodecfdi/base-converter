@@ -53,6 +53,9 @@ devDependencies:
   typedoc:
     specifier: ^0.25.9
     version: 0.25.9(typescript@5.3.3)
+  typedoc-material-theme:
+    specifier: ^1.0.2
+    version: 1.0.2(typedoc@0.25.9)
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
@@ -1363,6 +1366,10 @@ packages:
       fs-extra: 8.1.0
       globby: 11.1.0
       read-yaml-file: 1.1.0
+    dev: true
+
+  /@material/material-color-utilities@0.2.7:
+    resolution: {integrity: sha512-0FCeqG6WvK4/Cc06F/xXMd/pv4FeisI0c1tUpBbfhA2n9Y8eZEv4Karjbmf2ZqQCPUWMrGp8A571tCjizxoTiQ==}
     dev: true
 
   /@microsoft/api-extractor-model@7.28.3(@types/node@20.11.20):
@@ -6635,6 +6642,16 @@ packages:
       has-proto: 1.0.3
       is-typed-array: 1.1.13
       possible-typed-array-names: 1.0.0
+    dev: true
+
+  /typedoc-material-theme@1.0.2(typedoc@0.25.9):
+    resolution: {integrity: sha512-/nH/twYeHrnz5sZaaXzYJ85EOgKqnbl1ivzBKmuEAga1dBsARttwQUTPKAT7XrCPD+rRcoqxuCOdXZ6EGiqRQA==}
+    engines: {node: '>=18.0.0', npm: '>=8.6.0'}
+    peerDependencies:
+      typedoc: ^0.25.3
+    dependencies:
+      '@material/material-color-utilities': 0.2.7
+      typedoc: 0.25.9(typescript@5.3.3)
     dev: true
 
   /typedoc@0.25.9(typescript@5.3.3):
