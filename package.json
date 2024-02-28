@@ -1,6 +1,6 @@
 {
   "name": "@nodecfdi/base-converter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Librería que convierte un número entre bases arbitrarias",
   "keywords": [
     "base",
@@ -13,20 +13,20 @@
   "author": "OcelotlStudio <contacto@ocelotlstudio.com>",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/base-converter.cjs",
-  "module": "./dist/base-converter.js",
-  "unpkg": "./dist/base-converter.global.js",
-  "browser": "./dist/base-converter.global.js",
+  "main": "./dist/base_converter.umd.cjs",
+  "module": "./dist/base_converter.js",
+  "unpkg": "./dist/base_converter.umd.cjs",
+  "browser": "./dist/base_converter.umd.cjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": {
         "types": "./dist/index.d.ts",
-        "default": "./dist/base-converter.js"
+        "default": "./dist/base_converter.js"
       },
       "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/base-converter.cjs"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/base_converter.umd.cjs"
       }
     }
   },
