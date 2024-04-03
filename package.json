@@ -75,7 +75,7 @@
   },
   "prettier": "@nodecfdi/prettier-config",
   "engines": {
-    "node": ">=16.0.0"
+    "node": "^20 || ^19 || ^18 || ^16"
   },
   "browserslist": [
     "defaults",
