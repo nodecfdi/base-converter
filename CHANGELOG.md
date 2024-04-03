@@ -1,5 +1,16 @@
 # @nodecfdi/base-converter
 
+## 1.0.2
+
+### Patch Changes - Update linting and build tools
+
+- Fix renovate config for github
+- Revert build tool to use tsup
+- Update README with latest changes
+- Update commitlint cli and config
+- Update eslint, prettier, tsconfig to use standard nodecfdi config
+- Update dependencies
+
 ## 1.0.1
 
 ### Patch Changes - Change build tool, linter tools

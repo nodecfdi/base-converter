@@ -45,10 +45,10 @@ pnpm add @nodecfdi/base-converter
 
 CDN - Browser
 
-Usa la versión mas reciente publicada cambiando `<latest-version>` por la última version. Ex. ...base-converter@1.0.1/dist...
+Usa la versión mas reciente publicada cambiando `<latest-version>` por la última version. Ex. ...base-converter@1.0.2/dist...
 
 ```html
-<script src="https://unpkg.com/@nodecfdi/base-converter@<latest-version>/dist/base-converter.global.js"></script>
+<script src="https://unpkg.com/@nodecfdi/base-converter@<latest-version>/dist/index.global.js"></script>
 ```
 
 ## Implementation
