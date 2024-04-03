@@ -1,19 +1,23 @@
-import { BaseConverter } from '../../src/base_converter';
-import { BaseConverterSequence } from '../../src/base_converter_sequence';
+import { BaseConverter } from '#src/base_converter';
+import { BaseConverterSequence } from '#src/base_converter_sequence';
 
-describe('BaseConverter', () => {
+describe('base converter', () => {
   test('basic_functionality', () => {
     const hexSequence = new BaseConverterSequence('0123456789ABCDEF');
     const converter = new BaseConverter(hexSequence);
+
     expect(converter.sequence()).toBe(hexSequence);
     expect(converter.maximumBase()).toBe(16);
+
     const input = 'ffff';
     const expected = Number.parseInt(input, 16).toString(2);
+
     expect(converter.convert(input, 16, 2)).toBe(expected);
   });
 
   test('convert_empty_string', () => {
     const converter = BaseConverter.createBase36();
+
     expect(converter.convert('', 10, 2)).toBe('0');
   });
 
@@ -53,6 +57,7 @@ describe('BaseConverter', () => {
     const input = '3330303031303030303030333030303233373038';
     const expected = '292233162870206001759766198425879490508935868472';
     const converter = BaseConverter.createBase36();
+
     expect(converter.convert(input, 16, 10)).toBe(expected);
   });
 
@@ -61,6 +66,7 @@ describe('BaseConverter', () => {
     const expected = '0';
 
     const converter = BaseConverter.createBase36();
+
     expect(converter.convert(input, 2, 2)).toBe(expected);
   });
 
@@ -69,6 +75,7 @@ describe('BaseConverter', () => {
     const expected = '0';
 
     const converter = BaseConverter.createBase36();
+
     expect(converter.convert(input, 2, 4)).toBe(expected);
   });
 
@@ -80,6 +87,7 @@ describe('BaseConverter', () => {
     const expected = 'BEBAIDBAFBIH';
 
     const converter = new BaseConverter(new BaseConverterSequence('ABCDEFGHIJKLMNOPQRSTUVWXYZ'));
+
     expect(converter.convert(input, 8, 16)).toBe(expected);
   });
 });

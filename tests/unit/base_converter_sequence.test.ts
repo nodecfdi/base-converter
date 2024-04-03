@@ -1,6 +1,6 @@
-import { BaseConverterSequence } from '../../src/base_converter_sequence';
+import { BaseConverterSequence } from '#src/base_converter_sequence';
 
-describe('BaseConverterSequence', () => {
+describe('base converter sequence', () => {
   test('valid_sequence', () => {
     const source = 'ABCD';
     const sequence = new BaseConverterSequence(source);

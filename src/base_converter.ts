@@ -1,4 +1,4 @@
-import { BaseConverterSequence } from './base_converter_sequence';
+import { BaseConverterSequence } from './base_converter_sequence.js';
 
 /**
  * Converts any string of any base to any other base without
@@ -37,27 +37,33 @@ export class BaseConverter {
     }
 
     const originalSequence = this.sequence().value();
+
     if (inputValue === '') {
       inputValue = originalSequence[0]; // Use zero has input
     }
 
     const chars = originalSequence.slice(0, Math.max(0, frombaseInt));
+
+    // eslint-disable-next-line security/detect-non-literal-regexp
     if (!new RegExp(`^[${chars}]+$`, 'u').test(inputValue)) {
       throw new Error('The number to convert contains invalid characters');
     }
 
     let { length } = inputValue;
     const values: number[] = [];
-    for (let index = 0; index < length; index++) {
+
+    for (let index = 0; index < length; index += 1) {
       values.push(originalSequence.indexOf(inputValue.charAt(index)));
     }
 
     let result = '';
     let newlen = 0;
+
     do {
       let divide = 0;
+
       newlen = 0;
-      for (let index = 0; index < length; index++) {
+      for (let index = 0; index < length; index += 1) {
         divide *= frombaseInt;
         divide += values[index];
         if (divide >= tobaseInt) {

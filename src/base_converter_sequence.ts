@@ -24,6 +24,7 @@ export class BaseConverterSequence {
 
   public static checkIsValid(sequence: string): void {
     const length: number = new TextEncoder().encode(sequence).byteLength;
+
     // Is not empty
     if (length < 2) {
       throw new Error('Sequence does not contains enough elements');
@@ -36,6 +37,7 @@ export class BaseConverterSequence {
     const repeated = [...sequence.toUpperCase()].some(
       (value, index, a) => a.lastIndexOf(value) !== index,
     );
+
     if (repeated) {
       throw new Error('The sequence has not unique values');
     }
