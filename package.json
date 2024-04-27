@@ -1,6 +1,6 @@
 {
   "name": "@nodecfdi/base-converter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Librería que convierte un número entre bases arbitrarias",
   "type": "module",
   "main": "./dist/index.cjs",
