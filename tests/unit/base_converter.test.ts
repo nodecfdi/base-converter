@@ -1,8 +1,8 @@
-import { BaseConverter } from '#src/base_converter';
-import { BaseConverterSequence } from '#src/base_converter_sequence';
+import BaseConverter from '#src/base_converter';
+import BaseConverterSequence from '#src/base_converter_sequence';
 
 describe('base converter', () => {
-  test('basic_functionality', () => {
+  test('basic functionality', () => {
     const hexSequence = new BaseConverterSequence('0123456789ABCDEF');
     const converter = new BaseConverter(hexSequence);
 
@@ -15,13 +15,13 @@ describe('base converter', () => {
     expect(converter.convert(input, 16, 2)).toBe(expected);
   });
 
-  test('convert_empty_string', () => {
+  test('convert empty string', () => {
     const converter = BaseConverter.createBase36();
 
     expect(converter.convert('', 10, 2)).toBe('0');
   });
 
-  test.each([[-1], [0], [1], [37]])('invalid_from_base_%s', (base) => {
+  test.each([[-1], [0], [1], [37]])('invalid from base %s', (base) => {
     const converter = BaseConverter.createBase36();
     const throwFunction = (): void => {
       converter.convert('', base, 16);
@@ -31,7 +31,7 @@ describe('base converter', () => {
     expect(throwFunction).toThrow('Invalid from base');
   });
 
-  test.each([[-1], [0], [1], [37]])('invalid_to_base_%s', (base) => {
+  test.each([[-1], [0], [1], [37]])('invalid to base %s', (base) => {
     const converter = BaseConverter.createBase36();
     const throwFunction = (): void => {
       converter.convert('', 16, base);
@@ -41,7 +41,7 @@ describe('base converter', () => {
     expect(throwFunction).toThrow('Invalid to base');
   });
 
-  test('convert_with_input_not_is_sequence', () => {
+  test('convert with input not is sequence', () => {
     const converter = BaseConverter.createBase36();
     const throwFunction = (): void => {
       converter.convert('@', 16, 10);
@@ -51,7 +51,7 @@ describe('base converter', () => {
     expect(throwFunction).toThrow('The number to convert contains invalid characters');
   });
 
-  test('convert_using_long_input', () => {
+  test('convert using long input', () => {
     // This is the main reason to exists of BaseConverter class
     // since parseInt uses scientific notation if the number is >= 1e21 and has a maximum precision of 20.
     const input = '3330303031303030303030333030303233373038';
@@ -61,7 +61,7 @@ describe('base converter', () => {
     expect(converter.convert(input, 16, 10)).toBe(expected);
   });
 
-  test('convert_zero_using_same_base', () => {
+  test('convert zero using same base', () => {
     const input = '0000000';
     const expected = '0';
 
@@ -70,7 +70,7 @@ describe('base converter', () => {
     expect(converter.convert(input, 2, 2)).toBe(expected);
   });
 
-  test('convert_zero_using_different_base', () => {
+  test('convert zero using different base', () => {
     const input = '0000000';
     const expected = '0';
 
@@ -79,7 +79,7 @@ describe('base converter', () => {
     expect(converter.convert(input, 2, 4)).toBe(expected);
   });
 
-  test('convert_zero_using_letters_sequence', () => {
+  test('convert zero using letters sequence', () => {
     // Number.parseInt('501020304050607', 8).toString(16) => 141083105187
     //        501020304050607
     const input = 'FABACADAEAFAGAH';
