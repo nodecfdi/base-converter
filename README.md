@@ -43,14 +43,6 @@ PNPM
 pnpm add @nodecfdi/base-converter
 ```
 
-CDN - Browser
-
-Usa la versión mas reciente publicada cambiando `<latest-version>` por la última version. Ex. ...base-converter@1.0.2/dist...
-
-```html
-<script src="https://unpkg.com/@nodecfdi/base-converter@<latest-version>/dist/index.global.js"></script>
-```
-
 ## Implementación
 
 El convertidor espera tres parámetros: `converter.convert(input, fromBase, toBase)`
@@ -97,13 +89,13 @@ Las contribuciones con bienvenidas. Por favor lee [CONTRIBUTING][] para más det
 
 The `@nodecfdi/base-converter` library is copyright © [NodeCfdi](https://github.com/nodecfdi) - [OcelotlStudio](https://ocelotlstudio.com) and licensed for use under the MIT License (MIT). Please see [LICENSE][] for more information.
 
-[contributing]: https://github.com/nodecfdi/base-converter/blob/main/CONTRIBUTING.md
+[contributing]: https://github.com/nodecfdi/.github/blob/main/docs/CONTRIBUTING.md
 [changelog]: https://github.com/nodecfdi/base-converter/blob/main/CHANGELOG.md
 [source]: https://github.com/nodecfdi/base-converter
 [node-version]: https://www.npmjs.com/package/@nodecfdi/base-converter
 [discord]: https://discord.gg/AsqX8fkW2k
 [release]: https://www.npmjs.com/package/@nodecfdi/base-converter
-[license]: https://github.com/nodecfdi/base-converter/blob/main/LICENSE
+[license]: https://github.com/nodecfdi/base-converter/blob/main/LICENSE.md
 [build]: https://github.com/nodecfdi/base-converter/actions/workflows/build.yml?query=branch:main
 [reliability]: https://sonarcloud.io/component_measures?id=nodecfdi_base-converter&metric=Reliability
 [maintainability]: https://sonarcloud.io/component_measures?id=nodecfdi_base-converter&metric=Maintainability
