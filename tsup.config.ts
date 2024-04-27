@@ -1,13 +1,10 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  name: 'base_converter',
-  globalName: 'baseConverter',
-  entry: ['src/index.ts'],
-  splitting: false,
-  sourcemap: true,
+  entry: ['./index.ts'],
+  outDir: './dist',
   clean: true,
-  format: ['esm', 'cjs', 'iife'],
-  target: 'esnext',
+  format: ['esm', 'cjs'],
   dts: true,
+  target: 'esnext',
 });
