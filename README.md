@@ -51,7 +51,7 @@ Usa la versión mas reciente publicada cambiando `<latest-version>` por la últi
 <script src="https://unpkg.com/@nodecfdi/base-converter@<latest-version>/dist/index.global.js"></script>
 ```
 
-## Implementation
+## Implementación
 
 El convertidor espera tres parámetros: `converter.convert(input, fromBase, toBase)`
 
@@ -93,7 +93,7 @@ También utilizamos [Versionado Semántico 2.0.0](https://semver.org/lang/es/) p
 
 Las contribuciones con bienvenidas. Por favor lee [CONTRIBUTING][] para más detalles y recuerda revisar el archivo [CHANGELOG][].
 
-## Copyright and License
+## Copyright y Licencia
 
 The `@nodecfdi/base-converter` library is copyright © [NodeCfdi](https://github.com/nodecfdi) - [OcelotlStudio](https://ocelotlstudio.com) and licensed for use under the MIT License (MIT). Please see [LICENSE][] for more information.
 
