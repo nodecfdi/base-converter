@@ -23,50 +23,9 @@
 
 Librería que convierte un numero entre bases arbitrarias
 
-## Instalación
+## Documentación
 
-NPM
-
-```bash
-npm i @nodecfdi/base-converter --save
-```
-
-YARN
-
-```shell
-yarn add @nodecfdi/base-converter
-```
-
-PNPM
-
-```shell
-pnpm add @nodecfdi/base-converter
-```
-
-## Implementación
-
-El convertidor espera tres parámetros: `converter.convert(input, fromBase, toBase)`
-
-```ts
-import { BaseConverter } from '@nodecfdi/base-converter';
-// this is the main reason to exists of BaseConverter class
-// since parseInt and toString cannot handle large inputs
-const input = '3330303031303030303030333030303233373038';
-const converter = BaseConverter.createBase36();
-// result will be: 292233162870206001759766198425879490508935868472
-const result = converter.convert(input, 16, 10);
-```
-
-Alternativamente se puede definir cualquier sequencia y no es sensitivo a mayusculas o minusculas:
-
-```ts
-import { BaseConverter, BaseConverterSequence } from '@nodecfdi/base-converter';
-const hexSequence = new BaseConverterSequence('0123456789abCDEF');
-const converter = new BaseConverter(hexSequence);
-const input = 'FFff';
-// resut will be: 1111111111111111
-converter.convert(input, 16, 2);
-```
+La documentación está disponible en el sitio web [NodeCfdi](https://nodecfdi.com/librarys/base-converter/getting-started/)
 
 ## Soporte
 
