@@ -1,3 +1,4 @@
+## [1.0.5](https://github.com/nodecfdi/base-converter/compare/v1.0.4...v1.0.5) (2024-07-13)
 ## <small>1.0.4 (2024-07-01)</small>
 
 * chore: :arrow_up: update and remove dependencies unused ([79149ee](https://github.com/nodecfdi/base-converter/commit/79149ee))
