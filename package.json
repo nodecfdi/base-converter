@@ -42,8 +42,7 @@
     "build": "tshy",
     "postbuild": "pnpm run gen:docs && git add docs/*",
     "release": "np",
-    "version": "pnpm run build && pnpm run changelog",
-    "prepublishOnly": "pnpm run build"
+    "version": "pnpm run build && pnpm run changelog"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
