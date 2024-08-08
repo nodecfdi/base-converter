@@ -1,3 +1,4 @@
+## [1.0.6](https://github.com/nodecfdi/base-converter/compare/v1.0.5...v1.0.6) (2024-08-08)
 ## [1.0.5](https://github.com/nodecfdi/base-converter/compare/v1.0.4...v1.0.5) (2024-07-13)
 ## <small>1.0.4 (2024-07-01)</small>
 
