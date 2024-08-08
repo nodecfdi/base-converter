@@ -1,4 +1,4 @@
-import BaseConverterSequence from './base_converter_sequence.js';
+import BaseConverterSequence from '#src/base_converter_sequence';
 
 /**
  * Converts any string of any base to any other base without
@@ -12,7 +12,7 @@ export default class BaseConverter {
   }
 
   public static createBase36(): BaseConverter {
-    return new BaseConverter(new BaseConverterSequence('0123456789abcdefghijklmnopqrstuvwxyz'));
+    return new BaseConverter(new BaseConverterSequence('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'));
   }
 
   public sequence(): BaseConverterSequence {
