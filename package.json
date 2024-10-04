@@ -1,7 +1,7 @@
 {
   "name": "@nodecfdi/base-converter",
-  "version": "1.0.6",
   "description": "Librería que convierte un número entre bases arbitrarias",
+  "version": "1.0.6",
   "type": "module",
   "main": "./dist/commonjs/index.js",
   "module": "./dist/esm/index.js",
@@ -19,8 +19,7 @@
         "types": "./dist/commonjs/index.d.ts",
         "default": "./dist/commonjs/index.js"
       }
-    },
-    "./package.json": "./package.json"
+    }
   },
   "imports": {
     "#src/*": "./src/*.js"
@@ -36,8 +35,7 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "gen:docs": "typedoc --options typedoc.json",
-    "gen:changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -r 0",
-    "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "changelog": "auto-changelog -p && git add CHANGELOG.md",
     "prebuild": "pnpm lint:check && pnpm typecheck",
     "build": "tshy",
     "postbuild": "pnpm run gen:docs && git add docs/*",
@@ -45,26 +43,24 @@
     "version": "pnpm run build && pnpm run changelog"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.4.0",
-    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@jsprismarine/typedoc-material-theme": "^1.0.4",
-    "@nodecfdi/eslint-config": "^1.9.3",
-    "@nodecfdi/prettier-config": "^1.1.1",
-    "@nodecfdi/tsconfig": "^1.5.0",
-    "@types/node": "^20.14.14",
-    "@vitest/coverage-istanbul": "^2.0.5",
-    "conventional-changelog-cli": "^5.0.0",
-    "conventional-changelog-conventionalcommits": "^8.0.0",
-    "eslint": "^8.57.0",
-    "eslint-define-config": "^2.1.0",
-    "husky": "^9.1.4",
+    "@nodecfdi/eslint-config": "^2.0.6",
+    "@nodecfdi/prettier-config": "^1.2.0",
+    "@nodecfdi/tsconfig": "^1.7.2",
+    "@types/node": "^20.16.10",
+    "@vitest/coverage-istanbul": "^2.1.2",
+    "auto-changelog": "^2.5.0",
+    "eslint": "^9.12.0",
+    "husky": "^9.1.6",
     "is-in-ci": "^1.0.0",
     "np": "^10.0.7",
     "prettier": "^3.3.3",
     "tshy": "^3.0.2",
-    "typedoc": "^0.26.5",
-    "typescript": "^5.5.4",
-    "vitest": "^2.0.5"
+    "typedoc": "^0.26.8",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.2"
   },
   "author": "Fernando Isidro <luffynando@gmail.com>",
   "license": "MIT",
@@ -96,23 +92,25 @@
     ]
   },
   "prettier": "@nodecfdi/prettier-config",
-  "packageManager": "pnpm@9.7.0",
+  "packageManager": "pnpm@9.12.0",
   "publishConfig": {
     "access": "public",
     "tag": "latest"
+  },
+  "auto-changelog": {
+    "template": "keepachangelog",
+    "hideCredit": true
   },
   "np": {
     "message": "chore(release): :tada: %s",
     "tag": "latest",
     "branch": "main",
-    "anyBranch": false,
     "testScript": "test:run"
   },
   "tshy": {
     "selfLink": false,
     "exports": {
-      ".": "./src/index.ts",
-      "./package.json": "./package.json"
+      ".": "./src/index.ts"
     }
   }
 }
