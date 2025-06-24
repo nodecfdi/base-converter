@@ -34,9 +34,8 @@ export default class BaseConverterSequence {
       throw new Error('Cannot use multibyte strings in dictionary');
     }
 
-    const repeated = [...sequence.toUpperCase()].some(
-      (value, index, a) => a.lastIndexOf(value) !== index,
-    );
+    // eslint-disable-next-line @typescript-eslint/no-misused-spread
+    const repeated = [...sequence.toUpperCase()].some((value, index, a) => a.lastIndexOf(value) !== index);
 
     if (repeated) {
       throw new Error('The sequence has not unique values');

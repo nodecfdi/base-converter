@@ -44,7 +44,6 @@ export default class BaseConverter {
 
     const chars = originalSequence.slice(0, Math.max(0, frombaseInt));
 
-    // eslint-disable-next-line security/detect-non-literal-regexp
     if (!new RegExp(`^[${chars}]+$`, 'u').test(inputValue)) {
       throw new Error('The number to convert contains invalid characters');
     }
