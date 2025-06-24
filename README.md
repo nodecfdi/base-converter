@@ -19,6 +19,9 @@
 
 :mexico: La documentación del proyecto está en español porque ese es el lenguaje principal de los usuarios.
 
+> [!WARNING]
+> This package is native [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) and no longer provides a CommonJS export. If your project uses CommonJS, you will have to [convert to ESM](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c). Please don't open issues for questions regarding CommonJS / ESM.
+
 ## Acerca de `@nodecfdi/base-converter`
 
 Librería que convierte un numero entre bases arbitrarias
@@ -30,8 +33,6 @@ La documentación está disponible en el sitio web [NodeCfdi](https://nodecfdi.c
 ## Soporte
 
 Puedes obtener soporte abriendo un ticket en Github.
-
-Adicionalmente, esta librería pertenece a la comunidad [OcelotlStudio](https://ocelotlstudio.com), así que puedes usar los mismos canales de comunicación para obtener ayuda de algún miembro de la comunidad.
 
 ## Compatibilidad
 
@@ -46,7 +47,7 @@ Las contribuciones con bienvenidas. Por favor lee [CONTRIBUTING][] para más det
 
 ## Copyright y Licencia
 
-The `@nodecfdi/base-converter` library is copyright © [NodeCfdi](https://github.com/nodecfdi) - [OcelotlStudio](https://ocelotlstudio.com) and licensed for use under the MIT License (MIT). Please see [LICENSE][] for more information.
+The `@nodecfdi/base-converter` library is copyright © [NodeCfdi](https://github.com/nodecfdi) and licensed for use under the MIT License (MIT). Please see [LICENSE][] for more information.
 
 [contributing]: https://github.com/nodecfdi/.github/blob/main/docs/CONTRIBUTING.md
 [changelog]: https://github.com/nodecfdi/base-converter/blob/main/CHANGELOG.md
