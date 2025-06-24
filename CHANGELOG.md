@@ -5,23 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.0.7](https://luffynando.github.com/nodecfdi/base-converter/compare/v1.1.0...v1.0.7)
-
-### Merged
-
-- v1.0.4 [`#51`](https://luffynando.github.com/nodecfdi/base-converter/pull/51)
+## [v2.0.0](https://luffynando.github.com/nodecfdi/base-converter/compare/v1.0.7...v2.0.0)
 
 ### Commits
 
-- chore(release): :tada: 1.0.6 [`9bf3a6f`](https://luffynando.github.com/nodecfdi/base-converter/commit/9bf3a6f7266674b0668e22e0013a7ca2dc4b5833)
-- chore: :hammer: update development script to publish and build manually on local not in ci [`1c0b920`](https://luffynando.github.com/nodecfdi/base-converter/commit/1c0b920837b7a947507fff1c9e8b594f95784934)
-- docs: :memo: generate docs [`895380e`](https://luffynando.github.com/nodecfdi/base-converter/commit/895380e434264cde1fbae2c30f25faf33a7c6e75)
+- chore: :arrow_up: update dependencies [`36dcf6d`](https://luffynando.github.com/nodecfdi/base-converter/commit/36dcf6d4f9aaf0e3946a6faad065859b064fd2c9)
+- style: :rotating_light: resolve issues reported by eslitn and prettier [`4ff33cb`](https://luffynando.github.com/nodecfdi/base-converter/commit/4ff33cb24bf2a222b58d71da8e9f07d81afe3905)
+- docs: :memo: update readme with banner of only esm [`a6268f2`](https://luffynando.github.com/nodecfdi/base-converter/commit/a6268f214c2efaa2b656bbc1431c4d27789bcb97)
 
-## [v1.1.0](https://luffynando.github.com/nodecfdi/base-converter/compare/v1.0.6...v1.1.0) - 2024-06-30
+## [v1.0.7](https://luffynando.github.com/nodecfdi/base-converter/compare/v1.0.6...v1.0.7) - 2024-10-04
 
 ### Commits
 
-- chore(release): 1.1.0 :tada: [`0e46ba2`](https://luffynando.github.com/nodecfdi/base-converter/commit/0e46ba2147df6d8b1be6de7a874c964b7237eeea)
+- docs: :wastebasket: remove old generate doc files [`2392a24`](https://luffynando.github.com/nodecfdi/base-converter/commit/2392a243edf48b3dc1d1e358e1d976f26a73b24b)
+- docs: :memo: generate changelog using latest lib autochangelog [`0884ae1`](https://luffynando.github.com/nodecfdi/base-converter/commit/0884ae158c60caf37e5199a7aa13966fd6f91314)
+- refactor: :recycle: usage latest files structure and configuration for org [`53e2e8b`](https://luffynando.github.com/nodecfdi/base-converter/commit/53e2e8b7bc298a81515bb0f47b660d5ec296d28f)
 
 ## [v1.0.6](https://luffynando.github.com/nodecfdi/base-converter/compare/v1.0.5...v1.0.6) - 2024-08-08
 
