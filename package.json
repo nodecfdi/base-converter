@@ -95,7 +95,11 @@
   },
   "auto-changelog": {
     "template": "keepachangelog",
-    "hideCredit": true
+    "hideCredit": true,
+    "commitUrl": "https://github.com/nodecfdi/base-converter/commit/{id}",
+    "issueUrl": "https://github.com/nodecfdi/base-converter/issues/{id}",
+    "mergeUrl": "https://github.com/nodecfdi/base-converter/pull/{id}",
+    "compareUrl": "https://github.com/nodecfdi/base-converter/compare/{from}...{to}"
   },
   "np": {
     "message": "chore(release): :tada: %s",
