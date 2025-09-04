@@ -5,13 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v2.0.0](https://luffynando.github.com/nodecfdi/base-converter/compare/v1.0.7...v2.0.0)
+## [v3.0.0](https://luffynando.github.com/nodecfdi/base-converter/compare/v2.0.0...v3.0.0)
 
 ### Commits
 
+- style: :rotating_light: resolve issues reported by latest changes [`c1aca99`](https://luffynando.github.com/nodecfdi/base-converter/commit/c1aca99aee7bdf4853812e1ee884657f587ed617)
+- build: :boom: generate only esm and default config for doc and build dist [`6c4454e`](https://luffynando.github.com/nodecfdi/base-converter/commit/6c4454e81f4f9441cf0cb0e24c23f65b7cbe196f)
+- refactor: :recycle: move config of eslint for better standard code [`757cdf2`](https://luffynando.github.com/nodecfdi/base-converter/commit/757cdf2b372b0d00a61eb5344fb7664a03c75823)
+
+## [v2.0.0](https://luffynando.github.com/nodecfdi/base-converter/compare/v1.0.7...v2.0.0) - 2025-06-23
+
+### Commits
+
+- chore(release): :tada: 2.0.0 [`c3a143c`](https://luffynando.github.com/nodecfdi/base-converter/commit/c3a143c448bcf2ad54942d619e968d0fa3dcd227)
 - chore: :arrow_up: update dependencies [`36dcf6d`](https://luffynando.github.com/nodecfdi/base-converter/commit/36dcf6d4f9aaf0e3946a6faad065859b064fd2c9)
 - style: :rotating_light: resolve issues reported by eslitn and prettier [`4ff33cb`](https://luffynando.github.com/nodecfdi/base-converter/commit/4ff33cb24bf2a222b58d71da8e9f07d81afe3905)
-- docs: :memo: update readme with banner of only esm [`a6268f2`](https://luffynando.github.com/nodecfdi/base-converter/commit/a6268f214c2efaa2b656bbc1431c4d27789bcb97)
 
 ## [v1.0.7](https://luffynando.github.com/nodecfdi/base-converter/compare/v1.0.6...v1.0.7) - 2024-10-04
 
