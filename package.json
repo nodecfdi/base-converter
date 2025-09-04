@@ -22,8 +22,10 @@
     "binary"
   ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
   },
+  "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -37,7 +39,7 @@
     "prebuild": "pnpm lint:check && pnpm typecheck",
     "build": "tsdown --clean --dts",
     "postbuild": "pnpm gen:docs && git add docs/*",
-    "gen:docs": "typedoc --options typedoc.json",
+    "gen:docs": "typedoc",
     "changelog": "auto-changelog -p && git add CHANGELOG.md",
     "release": "np",
     "version": "pnpm build && pnpm changelog",
@@ -81,6 +83,16 @@
     "access": "public",
     "tag": "latest"
   },
+  "typedocOptions": {
+    "plugin": [
+      "typedoc-github-theme"
+    ],
+    "entryPoints": [
+      "./index.ts"
+    ],
+    "entryPointStrategy": "expand",
+    "out": "./docs"
+  },
   "auto-changelog": {
     "template": "keepachangelog",
     "hideCredit": true
@@ -90,5 +102,17 @@
     "tag": "latest",
     "branch": "main",
     "testScript": "test:run"
+  },
+  "tsdown": {
+    "entry": [
+      "index.ts"
+    ],
+    "shims": true,
+    "format": [
+      "esm"
+    ],
+    "platform": "neutral",
+    "exports": true,
+    "unbundle": true
   }
 }
