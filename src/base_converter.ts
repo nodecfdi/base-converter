@@ -1,10 +1,10 @@
-import BaseConverterSequence from '#src/base_converter_sequence';
+import { BaseConverterSequence } from './base_converter_sequence';
 
 /**
  * Converts any string of any base to any other base without
  * JS native parseInt or parseFloat limitations.
  */
-export default class BaseConverter {
+export class BaseConverter {
   readonly #sequence: BaseConverterSequence;
 
   public constructor(sequence: BaseConverterSequence) {

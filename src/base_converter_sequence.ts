@@ -1,7 +1,7 @@
 /**
  * This is a value object for BaseConverter containing the sequence
  */
-export default class BaseConverterSequence {
+export class BaseConverterSequence {
   private readonly sequence: string;
 
   readonly #length: number;

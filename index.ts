@@ -1,2 +1,2 @@
-export { default as BaseConverter } from '#src/base_converter';
-export { default as BaseConverterSequence } from '#src/base_converter_sequence';
+export { BaseConverter } from './src/base_converter';
+export { BaseConverterSequence } from './src/base_converter_sequence';

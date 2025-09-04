@@ -1,4 +1,5 @@
-import BaseConverterSequence from '#src/base_converter_sequence';
+import { describe, expect, test } from 'vitest';
+import { BaseConverterSequence } from '../../src/base_converter_sequence';
 
 describe('base converter sequence', () => {
   test('valid sequence', () => {

@@ -1,61 +1,9 @@
 {
   "name": "@nodecfdi/base-converter",
-  "description": "Librería que convierte un número entre bases arbitrarias",
-  "version": "2.0.0",
   "type": "module",
-  "module": "./build/index.js",
-  "types": "./build/index.d.ts",
-  "files": [
-    "build"
-  ],
-  "exports": {
-    ".": "./build/index.js"
-  },
-  "imports": {
-    "#src/*": "./src/*.js"
-  },
-  "scripts": {
-    "prepare": "is-in-ci || husky",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint . --fix",
-    "lint:check": "eslint .",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "test": "vitest",
-    "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage",
-    "tool:code": "pnpm run lint:check && pnpm run format:check && pnpm run typecheck",
-    "tool:build": "pnpm run tool:code && pnpm run test:run",
-    "clean": "del-cli build",
-    "gen:docs": "typedoc --options typedoc.json",
-    "changelog": "auto-changelog -p && git add CHANGELOG.md",
-    "prebuild": "pnpm run lint:check && pnpm run typecheck",
-    "build": "pnpm run clean && tsup",
-    "postbuild": "pnpm run gen:docs && git add docs/*",
-    "release": "np",
-    "version": "pnpm run build && pnpm run changelog"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "@nodecfdi/eslint-config": "^3.4.0",
-    "@nodecfdi/prettier-config": "^1.4.1",
-    "@nodecfdi/tsconfig": "^1.7.4",
-    "@types/node": "^22.15.32",
-    "@vitest/coverage-istanbul": "^3.2.4",
-    "auto-changelog": "^2.5.0",
-    "del-cli": "^6.0.0",
-    "eslint": "^9.29.0",
-    "husky": "^9.1.7",
-    "is-in-ci": "^1.0.0",
-    "np": "^10.2.0",
-    "prettier": "^3.6.0",
-    "tsup": "^8.5.0",
-    "typedoc": "^0.28.5",
-    "typedoc-github-theme": "^0.3.0",
-    "typescript": "^5.8.3",
-    "vitest": "^3.2.4"
-  },
+  "version": "2.0.0",
+  "packageManager": "pnpm@10.15.1",
+  "description": "Librería que convierte un número entre bases arbitrarias",
   "author": "Fernando Isidro <luffynando@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/nodecfdi/base-converter",
@@ -73,24 +21,60 @@
     "hexadecimal",
     "binary"
   ],
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "engines": {
-    "node": ">=18"
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "prepare": "is-in-ci || husky",
+    "prebuild": "pnpm lint:check && pnpm typecheck",
+    "build": "tsdown --clean --dts",
+    "postbuild": "pnpm gen:docs && git add docs/*",
+    "gen:docs": "typedoc --options typedoc.json",
+    "changelog": "auto-changelog -p && git add CHANGELOG.md",
+    "release": "np",
+    "version": "pnpm build && pnpm changelog",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "tool:code": "pnpm run lint:check && pnpm run typecheck",
+    "tool:build": "pnpm run tool:code && pnpm run test:run"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eienjs/eslint-config": "^1.2.2",
+    "@types/node": "^22.18.0",
+    "@vitest/coverage-istanbul": "^3.2.4",
+    "auto-changelog": "^2.5.0",
+    "eslint": "^9.34.0",
+    "husky": "^9.1.7",
+    "is-in-ci": "^2.0.0",
+    "np": "^10.2.0",
+    "tsdown": "^0.14.2",
+    "typedoc": "^0.28.12",
+    "typedoc-github-theme": "^0.3.1",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
   },
   "browserslist": [
     "defaults",
     "not IE 11"
   ],
+  "pnpm": {},
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
-    ]
-  },
-  "prettier": "@nodecfdi/prettier-config/pkg",
-  "packageManager": "pnpm@10.12.2",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "unrs-resolver"
     ]
   },
   "publishConfig": {
@@ -106,16 +90,5 @@
     "tag": "latest",
     "branch": "main",
     "testScript": "test:run"
-  },
-  "tsup": {
-    "entry": [
-      "./index.ts"
-    ],
-    "outDir": "./build",
-    "clean": false,
-    "format": "esm",
-    "dts": true,
-    "target": "esnext",
-    "platform": "neutral"
   }
 }
