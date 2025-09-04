@@ -1,6 +1,8 @@
-// @ts-check
-import nodecfdiConfig from '@nodecfdi/eslint-config';
+import eienjs from '@eienjs/eslint-config';
 
-const { defineConfig } = nodecfdiConfig(import.meta.dirname, { vitest: true, sonarjs: true });
-
-export default defineConfig();
+export default eienjs({
+  ignores: ['docs'],
+  typescript: {
+    tsconfigPath: 'tsconfig.json',
+  },
+});

@@ -1,5 +1,6 @@
 node_modules
 coverage
+
 .DS_STORE
 .nyc_output
 .idea
@@ -7,10 +8,9 @@ coverage
 *.sublime-project
 *.sublime-workspace
 *.log
+
 build
 dist
 yarn.lock
 shrinkwrap.yaml
 package-lock.json
-.tshy
-.tshy-build
