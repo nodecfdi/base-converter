@@ -9,9 +9,12 @@ on:
   schedule:
     - cron: '0 16 * * 0' # sunday 16:00
 
+permissions:
+  contents: read
+
 jobs:
   quality_code:
     uses: nodecfdi/.github/.github/workflows/quality_code.yml@main
 
   tests:
-    uses: nodecfdi/.github/.github/workflows/tests_lts.yml@main
+    uses: nodecfdi/.github/.github/workflows/tests.yml@main

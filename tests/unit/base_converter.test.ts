@@ -22,7 +22,7 @@ describe('base converter', () => {
     expect(converter.convert('', 10, 2)).toBe('0');
   });
 
-  test.each([[-1], [0], [1], [37]])('invalid from base %s', (base) => {
+  test.each([[-1], [0], [1], [37], [NaN], [Infinity], [-Infinity]])('invalid from base %s', (base) => {
     const converter = BaseConverter.createBase36();
     const throwFunction = (): void => {
       converter.convert('', base, 16);
@@ -32,7 +32,7 @@ describe('base converter', () => {
     expect(throwFunction).toThrow('Invalid from base');
   });
 
-  test.each([[-1], [0], [1], [37]])('invalid to base %s', (base) => {
+  test.each([[-1], [0], [1], [37], [NaN], [Infinity], [-Infinity]])('invalid to base %s', (base) => {
     const converter = BaseConverter.createBase36();
     const throwFunction = (): void => {
       converter.convert('', 16, base);
@@ -40,6 +40,14 @@ describe('base converter', () => {
 
     expect(throwFunction).toThrow(Error);
     expect(throwFunction).toThrow('Invalid to base');
+  });
+
+  test('convert with sequence containing regex metacharacters', () => {
+    const sequence = new BaseConverterSequence('^-]\\');
+    const converter = new BaseConverter(sequence);
+
+    expect(converter.convert('-^', 4, 2)).toBe('-^^');
+    expect(() => converter.convert('A', 4, 2)).toThrow('The number to convert contains invalid characters');
   });
 
   test('convert with input not is sequence', () => {

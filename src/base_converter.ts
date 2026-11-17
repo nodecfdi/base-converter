@@ -20,33 +20,33 @@ export class BaseConverter {
   }
 
   public convert(input: string, frombase: number, tobase: number): string {
+    const maxBase = this.maximumBase();
     const frombaseInt = Math.floor(frombase);
-    if (frombaseInt < 2 || frombaseInt > this.maximumBase()) {
+    if (!Number.isFinite(frombaseInt) || frombaseInt < 2 || frombaseInt > maxBase) {
       throw new Error('Invalid from base');
     }
 
     const tobaseInt = Math.floor(tobase);
-    if (tobaseInt < 2 || tobaseInt > this.maximumBase()) {
+    if (!Number.isFinite(tobaseInt) || tobaseInt < 2 || tobaseInt > maxBase) {
       throw new Error('Invalid to base');
     }
 
     let inputValue = input.toUpperCase();
-    const originalSequence = this.sequence().value();
+    const originalSequence = this.#sequence.value();
     if (inputValue === '') {
-      inputValue = originalSequence[0]; // Use zero has input
-    }
-
-    const chars = originalSequence.slice(0, Math.max(0, frombaseInt));
-
-    if (!new RegExp(`^[${chars}]+$`, 'u').test(inputValue)) {
-      throw new Error('The number to convert contains invalid characters');
+      inputValue = originalSequence[0]; // Use zero as input
     }
 
     let { length } = inputValue;
     const values: number[] = [];
 
     for (let index = 0; index < length; index += 1) {
-      values.push(originalSequence.indexOf(inputValue.charAt(index)));
+      const digit = originalSequence.indexOf(inputValue[index]);
+      if (digit === -1 || digit >= frombaseInt) {
+        throw new Error('The number to convert contains invalid characters');
+      }
+
+      values.push(digit);
     }
 
     let result = '';

@@ -4,6 +4,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   tests-coverage:
     uses: nodecfdi/.github/.github/workflows/test_coverage.yml@main
