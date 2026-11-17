@@ -11,39 +11,17 @@ describe('base converter sequence', () => {
     expect(sequence.toString()).toBe(source);
   });
 
-  test('invalid sequence with empty string', () => {
-    const throwFunction = (): BaseConverterSequence => new BaseConverterSequence('');
+  test.each([
+    ['empty string', '', 'Sequence does not contains enough elements'],
+    ['one char', 'X', 'Sequence does not contains enough elements'],
+    ['multibyte', 'Ñ', 'multibyte'],
+    ['repeated chars', 'ABCBA', 'The sequence has not unique values'],
+    ['repeated chars different case', 'ABCDabcd', 'The sequence has not unique values'],
+  ])('invalid sequence with %s', (_case, input, expectedError) => {
+    const throwFunction = (): BaseConverterSequence => new BaseConverterSequence(input);
 
     expect(throwFunction).toThrow(Error);
-    expect(throwFunction).toThrow('Sequence does not contains enough elements');
-  });
-
-  test('invalid sequence with one char', () => {
-    const throwFunction = (): BaseConverterSequence => new BaseConverterSequence('X');
-
-    expect(throwFunction).toThrow(Error);
-    expect(throwFunction).toThrow('Sequence does not contains enough elements');
-  });
-
-  test('invalid sequence with multibyte', () => {
-    const throwFunction = (): BaseConverterSequence => new BaseConverterSequence('Ñ');
-
-    expect(throwFunction).toThrow(Error);
-    expect(throwFunction).toThrow('multibyte');
-  });
-
-  test('invalid sequence repeated chars', () => {
-    const throwFunction = (): BaseConverterSequence => new BaseConverterSequence('ABCBA');
-
-    expect(throwFunction).toThrow(Error);
-    expect(throwFunction).toThrow('The sequence has not unique values');
-  });
-
-  test('invalid sequence with repeated chars different case', () => {
-    const throwFunction = (): BaseConverterSequence => new BaseConverterSequence('ABCDabcd');
-
-    expect(throwFunction).toThrow(Error);
-    expect(throwFunction).toThrow('The sequence has not unique values');
+    expect(throwFunction).toThrow(expectedError);
   });
 
   test('is valid method', () => {
