@@ -2,6 +2,8 @@
  * This is a value object for BaseConverter containing the sequence
  */
 export class BaseConverterSequence {
+  public toString = (): string => this.sequence;
+
   private readonly sequence: string;
 
   readonly #length: number;
@@ -12,9 +14,17 @@ export class BaseConverterSequence {
     this.#length = new TextEncoder().encode(sequence).byteLength;
   }
 
+  public value(): string {
+    return this.sequence;
+  }
+
+  public length(): number {
+    return this.#length;
+  }
+
   public static isValid(value: string): boolean {
     try {
-      BaseConverterSequence.checkIsValid(value);
+      this.checkIsValid(value);
 
       return true;
     } catch {
@@ -40,15 +50,5 @@ export class BaseConverterSequence {
     if (repeated) {
       throw new Error('The sequence has not unique values');
     }
-  }
-
-  public toString = (): string => this.sequence;
-
-  public value(): string {
-    return this.sequence;
-  }
-
-  public length(): number {
-    return this.#length;
   }
 }

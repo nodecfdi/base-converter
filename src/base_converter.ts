@@ -11,10 +11,6 @@ export class BaseConverter {
     this.#sequence = sequence;
   }
 
-  public static createBase36(): BaseConverter {
-    return new BaseConverter(new BaseConverterSequence('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'));
-  }
-
   public sequence(): BaseConverterSequence {
     return this.#sequence;
   }
@@ -25,19 +21,17 @@ export class BaseConverter {
 
   public convert(input: string, frombase: number, tobase: number): string {
     const frombaseInt = Math.floor(frombase);
-    const tobaseInt = Math.floor(tobase);
-    let inputValue = input.toUpperCase();
-
     if (frombaseInt < 2 || frombaseInt > this.maximumBase()) {
       throw new Error('Invalid from base');
     }
 
+    const tobaseInt = Math.floor(tobase);
     if (tobaseInt < 2 || tobaseInt > this.maximumBase()) {
       throw new Error('Invalid to base');
     }
 
+    let inputValue = input.toUpperCase();
     const originalSequence = this.sequence().value();
-
     if (inputValue === '') {
       inputValue = originalSequence[0]; // Use zero has input
     }
@@ -80,5 +74,9 @@ export class BaseConverter {
     } while (newlen > 0);
 
     return result;
+  }
+
+  public static createBase36(): BaseConverter {
+    return new BaseConverter(new BaseConverterSequence('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'));
   }
 }
