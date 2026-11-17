@@ -115,5 +115,10 @@
         "pnpm run changelog"
       ]
     }
+  },
+  "nodecfdi": {
+    "title": "Base Converter",
+    "icon": "i-tabler-binary",
+    "category": "utilities"
   }
 }

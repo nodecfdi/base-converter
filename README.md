@@ -19,13 +19,42 @@
 
 :mexico: La documentación del proyecto está en español porque ese es el lenguaje principal de los usuarios.
 
-## Acerca de `@nodecfdi/base-converter`
+## Inicio rápido
 
-Librería que convierte un numero entre bases arbitrarias
+Instala el paquete con tu gestor de dependencias preferido:
+
+```bash
+# pnpm
+pnpm add @nodecfdi/base-converter
+
+# npm
+npm install @nodecfdi/base-converter
+
+# yarn
+yarn add @nodecfdi/base-converter
+
+# bun
+bun add @nodecfdi/base-converter
+```
+
+Convierte números de cualquier longitud entre distintas bases (por ejemplo, de hexadecimal a decimal o binario):
+
+```ts
+import { BaseConverter } from '@nodecfdi/base-converter';
+
+const converter = BaseConverter.createBase36();
+
+// Hexadecimal (base 16) a Binario (base 2)
+console.log(converter.convert('ffff', 16, 2)); // "1111111111111111"
+
+// Número largo en Hexadecimal (base 16) a Decimal (base 10) sin pérdida de precisión
+const input = '3330303031303030303030333030303233373038';
+console.log(converter.convert(input, 16, 10)); // "292233162870206001759766198425879490508935868472"
+```
 
 ## Documentación
 
-La documentación está disponible en el sitio web [NodeCfdi](https://nodecfdi.com/librarys/base-converter/getting-started/)
+La documentación está disponible en el sitio web [NodeCfdi](https://nodecfdi.com/packages/base-converter/getting-started)
 
 ## Soporte
 
