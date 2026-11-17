@@ -2,7 +2,7 @@
   "name": "@nodecfdi/base-converter",
   "type": "module",
   "version": "3.0.0",
-  "packageManager": "pnpm@10.15.1",
+  "packageManager": "pnpm@12.21.0",
   "description": "Librería que convierte un número entre bases arbitrarias",
   "author": "Fernando Isidro <luffynando@gmail.com>",
   "license": "MIT",
@@ -32,17 +32,12 @@
     "dist"
   ],
   "engines": {
-    "node": ">=20.19"
+    "node": "^22.13.0 || ^24 || ^26"
   },
   "scripts": {
     "prepare": "is-in-ci || husky",
-    "prebuild": "pnpm lint:check && pnpm typecheck",
-    "build": "tsdown --clean --dts",
-    "postbuild": "pnpm gen:docs && git add docs/*",
-    "gen:docs": "typedoc",
-    "changelog": "auto-changelog -p && git add CHANGELOG.md",
-    "release": "np",
-    "version": "pnpm build && pnpm changelog",
+    "changelog": "auto-changelog -u -p",
+    "commitlint": "commitlint --edit",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -50,30 +45,30 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "tool:code": "pnpm run lint:check && pnpm run typecheck",
-    "tool:build": "pnpm run tool:code && pnpm run test:run"
+    "tool:build": "pnpm run tool:code && pnpm run test:run",
+    "build": "tsdown",
+    "release": "release-it"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "@eienjs/eslint-config": "^1.2.2",
-    "@types/node": "^22.18.0",
-    "@vitest/coverage-istanbul": "^3.2.4",
-    "auto-changelog": "^2.5.0",
-    "eslint": "^9.34.0",
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@eienjs/eslint-config": "^2.3.2",
+    "@types/node": "^26.6.6",
+    "@vitest/coverage-istanbul": "^5.1.0",
+    "auto-changelog": "^2.7.0",
+    "eslint": "^10.15.0",
+    "eslint-plugin-erasable-syntax-only": "^0.7.2",
     "husky": "^9.1.7",
     "is-in-ci": "^2.0.0",
-    "np": "^10.2.0",
-    "tsdown": "^0.14.2",
-    "typedoc": "^0.28.12",
-    "typedoc-github-theme": "^0.3.1",
-    "typescript": "^5.9.2",
-    "vitest": "^3.2.4"
+    "release-it": "^21.1.2",
+    "tsdown": "^0.23.7",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.0"
   },
   "browserslist": [
     "defaults",
     "not IE 11"
   ],
-  "pnpm": {},
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -83,40 +78,42 @@
     "access": "public",
     "tag": "latest"
   },
-  "typedocOptions": {
-    "plugin": [
-      "typedoc-github-theme"
-    ],
-    "entryPoints": [
-      "./index.ts"
-    ],
-    "entryPointStrategy": "expand",
-    "out": "./docs"
-  },
   "auto-changelog": {
     "template": "keepachangelog",
     "hideCredit": true,
-    "commitUrl": "https://github.com/nodecfdi/base-converter/commit/{id}",
-    "issueUrl": "https://github.com/nodecfdi/base-converter/issues/{id}",
-    "mergeUrl": "https://github.com/nodecfdi/base-converter/pull/{id}",
-    "compareUrl": "https://github.com/nodecfdi/base-converter/compare/{from}...{to}"
+    "commitLimit": false
   },
-  "np": {
-    "message": "chore(release): :tada: %s",
-    "tag": "latest",
-    "branch": "main",
-    "testScript": "test:run"
-  },
-  "tsdown": {
-    "entry": [
-      "index.ts"
-    ],
-    "shims": true,
-    "format": [
-      "esm"
-    ],
-    "platform": "neutral",
-    "exports": true,
-    "unbundle": true
+  "release-it": {
+    "git": {
+      "commit": true,
+      "tag": true,
+      "push": true,
+      "requireCleanWorkingDir": true,
+      "commitMessage": "chore(release): :tada: v${version}",
+      "tagAnnotation": "chore(release): :tada: v${version}"
+    },
+    "github": {
+      "release": true,
+      "web": true,
+      "releaseName": "Release v${version}"
+    },
+    "npm": {
+      "publish": true,
+      "publishPackageManager": "pnpm",
+      "publishArgs": [
+        "--no-git-checks"
+      ]
+    },
+    "hooks": {
+      "before:init": [
+        "pnpm run lint:check",
+        "pnpm run typecheck",
+        "pnpm test:run"
+      ],
+      "after:bump": [
+        "pnpm run build",
+        "pnpm run changelog"
+      ]
+    }
   }
 }
