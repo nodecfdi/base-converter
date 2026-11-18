@@ -81,7 +81,7 @@ The `@nodecfdi/base-converter` library is copyright © [NodeCfdi](https://github
 [node-version]: https://www.npmjs.com/package/@nodecfdi/base-converter
 [discord]: https://discord.gg/AsqX8fkW2k
 [release]: https://www.npmjs.com/package/@nodecfdi/base-converter
-[license]: https://github.com/nodecfdi/base-converter/blob/main/LICENSE.md
+[license]: https://github.com/nodecfdi/base-converter/blob/main/LICENSE
 [build]: https://github.com/nodecfdi/base-converter/actions/workflows/build.yml?query=branch:main
 [reliability]: https://sonarcloud.io/component_measures?id=nodecfdi_base-converter&metric=Reliability
 [maintainability]: https://sonarcloud.io/component_measures?id=nodecfdi_base-converter&metric=Maintainability
